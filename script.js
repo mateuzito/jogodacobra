@@ -15,7 +15,7 @@ let score = 0;
 
 // Getting high score from the local storage
 let highScore = localStorage.getItem("high-score") || 0;
-highScoreElement.innerText = `High Score: ${highScore}`;
+highScoreElement.innerText = `Maior Pontuação: ${highScore}`;
 
 const updateFoodPosition = () => {
   // Passing a random 1 - 30 value as food position
@@ -26,7 +26,7 @@ const updateFoodPosition = () => {
 const handleGameOver = () => {
   // Clearing the timer and reloading the page on game over
   clearInterval(setIntervalId);
-  alert("Game Over! Press OK to replay...");
+  alert("Game Over! Pressione OK para reproduzir novamente...");
   location.reload();
 };
 
@@ -65,8 +65,8 @@ const initGame = () => {
     score++; // increment score by 1
     highScore = score >= highScore ? score : highScore;
     localStorage.setItem("high-score", highScore);
-    scoreElement.innerText = `Score: ${score}`;
-    highScoreElement.innerText = `High Score: ${highScore}`;
+    scoreElement.innerText = `Pontuação: ${score}`;
+    highScoreElement.innerText = `Maior Pontuação: ${highScore}`;
   }
   // Updating the snake's head position based on the current velocity
   snakeX += velocityX;
